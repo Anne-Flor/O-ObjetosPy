@@ -1,11 +1,12 @@
 class Conta:
 
-    def __init__(self, numero, titular, saldo, limite): #função construtora
+    def __init__(self, numero, titular, saldo, limite, codigo_banco):
         print('Construindo um objeto...'.format(self))
-        self.__numero = numero
-        self.__titular = titular #Atributos com 2 underscore é privado 
-        self.__saldo = saldo
-        self.__limite = limite
+        self.__numero       = numero
+        self.__titular      = titular               
+        self.__saldo        = saldo
+        self.__limite       = limite
+        self.__codigo_banco = "001"
     
     def extrato(self):
         print('O saldo de {} do títular {}'.format(self.__saldo, self.__titular))
@@ -40,3 +41,7 @@ class Conta:
     @limite.setter
     def limite(self, novo_limite):
         self.__limite = novo_limite
+
+    @property
+    def codigo_banco(self):
+        return self.__codigo_banco
